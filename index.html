@@ -445,18 +445,46 @@
         </button>
         <form class="service-form">
           <h1 class="form-title">Оставте свои данные, мы вам перезвоним</h1>
+
           <label class="field-title"
             >Имя
-            <input type="text" name="user-name" class="field" />
+            <input type="text" name="user-name" class="field" autofocus />
           </label>
+
           <label class="field-title"
             >Телефон
-            <input type="text" name="user-telephone" class="field" />
+            <input type="tel" name="user-telephone" class="field" />
           </label>
+
           <label class="field-title"
             >Почта
-            <input type="text" name="user-mail" class="field" />
+            <input type="email" name="user-mail" class="field" />
           </label>
+
+          <label class="field-title">
+            Комментарий
+            <textarea
+              class="field-comment"
+              name="comment"
+              rows="10"
+              placeholder="Введите текст"
+            ></textarea>
+          </label>
+
+          <label class="field-checkbox">
+            <input
+              type="checkbox"
+              name="agreement"
+              class="agreement"
+              value="agreement"
+            />
+            Соглашаюсь с рассылкой и прнинимаю
+            <a class="agreement-link" href="">Условия договора</a>
+          </label>
+
+          <button type="submit" class="send-btn" aria-label="Отправить">
+            Заказать услугу
+          </button>
         </form>
       </div>
     </div>
