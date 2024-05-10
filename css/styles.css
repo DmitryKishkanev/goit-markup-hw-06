@@ -741,6 +741,7 @@ address .location {
 }
 
 .field-title {
+  /* position: relative; */
   margin-bottom: 10px;
 
   color: var(--text-color);
@@ -753,14 +754,25 @@ address .location {
   letter-spacing: 0.01em;
 }
 
+.input-field {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 4px;
+
+  border: 1px solid var(--input-border-color);
+  border-radius: 4px;
+}
+
 .field {
   width: 100%;
   height: 40px;
   padding: 14px;
 
-  margin: 4px 0 0 0;
-  border-radius: 4px;
+  /* margin: 4px 0 0 0; */
+
   border: 1px solid var(--input-border-color);
+  border-radius: 4px;
 
   font-size: 16px;
 
@@ -769,9 +781,21 @@ address .location {
   transition: border-color var(--transition-time) var(--transition-type);
 }
 
-.field:hover,
-.fild:focus {
+.input-field:hover,
+.input-field:focus {
   border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+
+.input-icon {
+  position: absolute;
+
+  width: 18px;
+  height: 18px;
+  /* top: 50%; */
+  left: 12px;
+
+  fill: currentColor;
 }
 
 .field-comment {
