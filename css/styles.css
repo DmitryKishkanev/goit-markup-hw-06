@@ -22,6 +22,7 @@
   --backdrop-color: rgba(0, 0, 0, 20%);
   --border-btn-color: rgba(0, 0, 0, 10%);
   --input-border-color: rgba(21, 21, 21, 0.2);
+  --chackbox-color: #212121;
   --card-set-gap: 30px;
   --transition-type: cubic-bezier(0.4, 0, 0.2, 1);
   --transition-time: 250ms;
@@ -741,7 +742,7 @@ address .location {
 }
 
 .field-title {
-  /* position: relative; */
+  position: relative;
   margin-bottom: 10px;
 
   color: var(--text-color);
@@ -754,37 +755,32 @@ address .location {
   letter-spacing: 0.01em;
 }
 
-.input-field {
-  position: relative;
-  display: flex;
-  align-items: center;
-  margin-top: 4px;
-
-  border: 1px solid var(--input-border-color);
-  border-radius: 4px;
-}
-
 .field {
   width: 100%;
   height: 40px;
-  padding: 14px;
+  padding: 12px 12px 12px 42px;
 
-  /* margin: 4px 0 0 0; */
+  margin: 4px 0 0 0;
 
   border: 1px solid var(--input-border-color);
   border-radius: 4px;
 
   font-size: 16px;
 
+  outline: none;
   cursor: pointer;
 
   transition: border-color var(--transition-time) var(--transition-type);
 }
 
-.input-field:hover,
-.input-field:focus {
-  border-color: var(--accent-color);
+.field-title input:hover + .input-icon,
+.field-title input:focus + .input-icon {
   color: var(--accent-color);
+}
+
+.field-title input:hover,
+.field-title input:focus {
+  border-color: var(--accent-color);
 }
 
 .input-icon {
@@ -792,10 +788,18 @@ address .location {
 
   width: 18px;
   height: 18px;
-  /* top: 50%; */
+  top: 50%;
   left: 12px;
+  cursor: pointer;
 
   fill: currentColor;
+
+  transition: color var(--transition-time) var(--transition-type);
+}
+
+.input-field input:hover + .input-icon,
+.input-field input:focus + .input-icon {
+  color: var(--accent-color);
 }
 
 .field-comment {
@@ -809,6 +813,8 @@ address .location {
   border: 1px solid var(--input-border-color);
   border-radius: 4px;
   box-sizing: border-box;
+
+  outline: none;
 
   transition: border-color var(--transition-time) var(--transition-type);
 }
@@ -839,12 +845,41 @@ address .location {
 }
 
 .agreement {
-  margin-right: 4px;
+  /* -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  position: absolute; */
+
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
-/* .agreement-title {
-  margin-left: 4px;
-} */
+.chackbox-icon {
+  display: inline-block;
+  width: 16px;
+  height: 15px;
+  margin-right: 7px;
+
+  border: 2px solid var(--chackbox-color);
+  border-radius: 2px;
+
+  /* background-color: tomato; */
+}
+
+.agreement:checked + .chackbox-icon {
+  border-color: var(--accent-color);
+  background-color: var(--accent-color);
+  background-image: url(../images/sprite/svg/icon\ check.svg);
+  background-size: contain;
+  background-origin: border-box;
+}
 
 .agreement-link {
   margin-left: 4px;
